@@ -17,7 +17,11 @@ def hw2():
     s.check()
     isSat = s.check()
     
-    if (isSat == sat):
+    #if Not(model) is unsat, then the model must be valid, if Not(model) is sat, model is not valid, but sat.
+    if (isSat == unsat):
         print("model is valid")
     else:
-        print("invalid")
+        print("model is invalid")
+        print(s.model())
+
+hw2()
