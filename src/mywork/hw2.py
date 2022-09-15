@@ -1,8 +1,12 @@
 # Andres Fonseca acz9et
 
+# Comments addressing real-world examples are located in question 1, question 8, question 13, and question 16
+# Lines 13-15, Lines 56-59, Lines 85-88, and Lines 104-107, respectively
+
 from z3 import *
 X, Y, Z = Bools("X Y Z")
 
+# dictionary that holds propositions
 props = []
 
 # 1. X ∨ Y, X ⊢ ¬Y
@@ -122,6 +126,8 @@ props.append(C19)
 
 s = Solver()
 i = 0
+
+# checks all propositions in dictionary 'props'
 
 for item in props:
     s.reset()
