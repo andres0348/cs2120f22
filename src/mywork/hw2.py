@@ -19,6 +19,9 @@ def hw2_1():
     if (isSat == unsat):
         print("proposition 1 is valid")
     else:
+        # If x = is raining and y = slippery roads, if it is raining or the roads are slippery, and it is given
+        # that it's raining, then slippery roads must be false to fulfill this inference rule. Since there
+        # could be rain and slippery roads(both true), this inference rule is not valid.
         print("proposition 1 is not valid, counterexample:", s.model())
 
 def hw2_2():
@@ -166,6 +169,10 @@ def hw2_8():
     if (isSat == unsat):
         print("proposition 8 is valid")
     else:
+        # If x = is raining and y = slippery roads; if rain implies slippery roads (x->y), and it is not  
+        # raining (¬x), then the roads can't be slippery(¬y). However, if it is not raining and roads are slippery 
+        # from an oil spill(for example), then this proposition would not hold up, since the proposition 
+        # simplifies to true -> false, which is false (when x:false, y:true)
         print("proposition 8 is not valid, counterexample:", s.model())
 
 def hw2_9():
@@ -256,6 +263,10 @@ def hw2_13():
     if (isSat == unsat):
         print("proposition 13 is valid")
     else:
+        # If x = israining and y = slippery roads, if roads are slippery when raining (x->y) and the roads are 
+        # slippery (y:true), then it must be raining (...->x). However, if it is not raining and the roads are
+        # slippery for other reasons (x:false, y:true), then the left-side conditions still hold up, even 
+        # though it isn't raining
         print("proposition 13 is not valid, counterexample:", s.model())
 
 def hw2_14():
@@ -310,6 +321,10 @@ def hw2_16():
     if (isSat == unsat):
         print("proposition 16 is valid")
     else:
+        # if x = israining and y = slippery roads, if rain implies slippery roads (x->y) then slippery roads
+        # must imply rain (y->x). However, this condition does not hold up when it is not raining and roads
+        # are slippery from other causes (x:false, y:true), since slippery roads do not imply rain (y->x)
+        # simplifies to (true->false), which is false
         print("proposition 16 is not valid, counterexample:", s.model())
 
 def hw2_17():
